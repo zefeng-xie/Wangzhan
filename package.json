@@ -1,0 +1,13 @@
+{
+  "name": "my-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "npm --prefix frontend run build",
+    "dev": "node scripts/dev.js",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "start": "npm --prefix backend run start",
+    "start:backend": "npm --prefix backend run start"
+  }
+}

@@ -1,0 +1,12 @@
+frontend/dist/
+frontend/node_modules/
+backend/node_modules/
+dev-run.out
+dev-run.err
+frontend/.vscode/
+frontend/README.md
+CLAUDE.md
+images/
+index.html
+script.js
+style.css

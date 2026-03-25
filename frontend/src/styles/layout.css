@@ -1,0 +1,141 @@
+/* ===== 导航栏 ===== */
+.navbar {
+    position: fixed; /* 固定在顶部，滚动时不消失 */
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    display: flex; /* Flexbox 布局：让子元素横向排列 */
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center;
+    z-index: 1000; /* 确保导航栏在最上层 */
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+}
+
+.nav-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none; /* 去掉列表前面的小圆点 */
+    gap: 2rem; /* 每个链接之间的间距 */
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s; /* 颜色变化时的过渡动画 */
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ===== 英雄区（首页大横幅） ===== */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #FDE047 0%, #FEF08A 50%, #FDE047 100%);
+    color: var(--text);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #0EA5E9;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* ===== 通用 Section 样式 ===== */
+.section {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto; /* 水平居中 */
+}
+
+.section-alt {
+    max-width: 100%;
+    background: var(--bg-alt);
+}
+
+.section-alt > h2,
+.section-alt > div {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+/* 标题下面的装饰线 */
+.section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
+}
+
+/* ===== 关于我 ===== */
+.about-content p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* ===== 页脚 ===== */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background: #1e3a5f;
+    color: #93C5FD;
+    font-size: 0.9rem;
+}

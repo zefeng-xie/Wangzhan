@@ -1,0 +1,46 @@
+/* ===== 成就数据墙 ===== */
+.stats-section {
+    background: linear-gradient(135deg, #0f1f2e 0%, #1a3347 100%);
+    padding: 4rem 2rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.stat-icon {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 0.4rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.stat-unit {
+    font-size: 1rem;
+    color: var(--lemon);
+    font-weight: 600;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}

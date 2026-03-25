@@ -1,0 +1,43 @@
+/* ===== 全局重置 ===== */
+/*
+    浏览器会给 HTML 元素加默认样式（比如 margin、padding）
+    先把它们清零，这样我们从零开始控制布局
+    类似于 Python 里先初始化变量
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== 基础样式 ===== */
+/*
+    :root 定义"CSS 变量"，方便统一修改颜色
+    类似于 Python 里在文件开头定义常量
+*/
+:root {
+    --primary: #0EA5E9;       /* 天空蓝：主色调 */
+    --primary-dark: #0284C7;  /* 深一点的天空蓝 */
+    --lemon: #FDE047;         /* 柠檬黄 */
+    --lemon-light: #FEF9C3;   /* 浅柠檬黄（用于背景） */
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --bg: #ffffff;
+    --bg-alt: #FEF9C3;        /* 交替背景改为浅柠檬黄 */
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+html {
+    scroll-behavior: smooth; /* 点击导航链接时平滑滚动 */
+}
+
+body {
+    font-family: -apple-system, "Microsoft YaHei", "微软雅黑", sans-serif;
+    color: var(--text);
+    line-height: 1.6; /* 行高，让文字不那么挤 */
+}
+
+a {
+    text-decoration: none; /* 去掉链接的下划线 */
+    color: inherit;
+}

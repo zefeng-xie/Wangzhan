@@ -1,0 +1,125 @@
+/* ===== 技能卡片 ===== */
+/*
+    CSS Grid 布局：像表格一样排列元素
+    repeat(auto-fit, minmax(200px, 1fr)) 的意思是：
+    - 每列最小 200px，自动填充列数
+    - 屏幕小了就自动换行，实现响应式
+*/
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+.skill-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ===== 项目卡片 ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--primary);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+}
+
+.project-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--primary-dark);
+}
+
+.project-card p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    padding: 0.25rem 0.75rem;
+    background: #E0F2FE;
+    color: var(--primary-dark);
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* ===== 联系方式 ===== */
+.contact-content {
+    text-align: center;
+}
+
+.contact-content > p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s;
+    min-width: 120px;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--primary);
+}
