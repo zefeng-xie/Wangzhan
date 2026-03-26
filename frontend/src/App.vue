@@ -10,13 +10,14 @@ import SiteFooter from './components/SiteFooter.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import StatsSection from './components/StatsSection.vue'
 import { fallbackStats } from './data/portfolioData'
+import { getApiUrl } from './lib/api'
 import { initPortfolioPage } from './portfolioPage'
 
 const stats = reactive({ ...fallbackStats })
 
 async function loadStats() {
   try {
-    const response = await fetch('/api/stats')
+    const response = await fetch(getApiUrl('/api/stats'))
     if (!response.ok) {
       throw new Error(`Failed to load stats: ${response.status}`)
     }

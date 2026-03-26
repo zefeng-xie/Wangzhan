@@ -5,11 +5,30 @@ const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const CORS_ORIGIN = process.env.CORS_ORIGIN || '';
 const frontendDistDir = path.resolve(__dirname, '..', 'frontend', 'dist');
 const frontendIndexFile = path.join(frontendDistDir, 'index.html');
 const hasFrontendBuild = fs.existsSync(frontendIndexFile);
 
-app.use(cors());
+function getAllowedOrigins(value) {
+    return value
+        .split(',')
+        .map((origin) => origin.trim())
+        .filter(Boolean);
+}
+
+const allowedOrigins = getAllowedOrigins(CORS_ORIGIN);
+
+app.use(cors({
+    origin(origin, callback) {
+        if (!origin || allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
+            callback(null, true);
+            return;
+        }
+
+        callback(new Error(`CORS blocked for origin: ${origin}`));
+    }
+}));
 app.use(express.json());
 
 function getDaysSince(dateStr) {
@@ -43,6 +62,11 @@ if (hasFrontendBuild) {
 
 app.listen(PORT, () => {
     console.log(`Backend running at http://localhost:${PORT}`);
+    console.log(
+        allowedOrigins.length > 0
+            ? `CORS origins: ${allowedOrigins.join(', ')}`
+            : 'CORS origins: allow all'
+    );
     if (hasFrontendBuild) {
         console.log(`Serving frontend build from ${frontendDistDir}`);
     } else {
