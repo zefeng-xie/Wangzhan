@@ -10,6 +10,8 @@ const frontendDistDir = path.resolve(__dirname, '..', 'frontend', 'dist');
 const frontendIndexFile = path.join(frontendDistDir, 'index.html');
 const hasFrontendBuild = fs.existsSync(frontendIndexFile);
 
+app.set('trust proxy', 1);
+
 function getAllowedOrigins(value) {
     return value
         .split(',')
