@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: wangzhan-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    plan: free
+    envVars:
+      - key: CORS_ORIGIN
+        sync: false
