@@ -8,6 +8,10 @@
     "dev:backend": "npm --prefix backend run dev",
     "build:frontend": "npm --prefix frontend run build",
     "start": "npm --prefix backend run start",
-    "start:backend": "npm --prefix backend run start"
+    "start:backend": "npm --prefix backend run start",
+    "server:key": "powershell -ExecutionPolicy Bypass -File scripts/install-ssh-key.ps1",
+    "server:connect": "powershell -ExecutionPolicy Bypass -File scripts/connect-server.ps1",
+    "server:setup": "powershell -ExecutionPolicy Bypass -File scripts/setup-server.ps1",
+    "server:deploy": "powershell -ExecutionPolicy Bypass -File scripts/deploy-server.ps1"
   }
 }
