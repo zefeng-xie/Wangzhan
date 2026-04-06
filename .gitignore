@@ -11,9 +11,9 @@ frontend/.vscode/
 frontend/README.md
 CLAUDE.md
 images/
-index.html
-script.js
-style.css
+/index.html
+/script.js
+/style.css
 !frontend/.env.example
 !backend/.env.example
 deploy/server.env
