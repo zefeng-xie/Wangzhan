@@ -8,7 +8,7 @@ import os
 import sys
 import time
 import paramiko
-from PIL import Image
+from PIL import Image, ImageOps
 
 # ── 配置 ────────────────────────────────────────────────
 SERVER_HOST = "207.148.117.104"
@@ -29,6 +29,7 @@ def to_webp(src_path: str) -> tuple[str, bool]:
     if os.path.exists(webp_path) and os.path.getmtime(webp_path) >= os.path.getmtime(src_path):
         return webp_path, False
     with Image.open(src_path) as img:
+        img = ImageOps.exif_transpose(img)  # 修正 EXIF 旋转方向
         if img.mode in ("RGBA", "P"):
             img = img.convert("RGBA")
         else:
