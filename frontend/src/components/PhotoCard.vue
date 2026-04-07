@@ -41,6 +41,11 @@ const placeholderStyle = computed(() => {
 function handleImageError(event) {
   const image = event.target
 
+  if (image.src.includes('.webp')) {
+    image.src = image.src.replace('.webp', '.jpg')
+    return
+  }
+
   if (image.src.includes('.jpg')) {
     image.src = image.src.replace('.jpg', '.png')
     return
@@ -53,7 +58,7 @@ function handleImageError(event) {
 
 <template>
   <div :class="['photo-item', itemClass]">
-    <img :src="src" :alt="alt" class="photo-img" :style="imageStyle" @error="handleImageError" />
+    <img :src="src" :alt="alt" class="photo-img" :style="imageStyle" loading="lazy" @error="handleImageError" />
     <div class="photo-placeholder" :style="placeholderStyle">
       <i :class="placeholderIcon"></i>
       <p>{{ alt }}</p>

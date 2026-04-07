@@ -21,9 +21,9 @@ function createPhotoEntries({
 
     return {
       id: `${labelPrefix}-${number}`,
-      src: `${publicPath}/${number}.jpg`,
+      src: `${publicPath}/${number}.webp`,
       alt: `${labelPrefix} ${number}`,
-      hint: `命名为 ${number}.jpg 放入 ${hintPath}/`,
+      hint: `命名为 ${number}.webp 放入 ${hintPath}/`,
       aspectRatio: resolvedRatio,
       placeholderIcon,
     }
