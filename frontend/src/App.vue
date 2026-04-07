@@ -9,7 +9,7 @@ import ProjectsSection from './components/ProjectsSection.vue'
 import SiteFooter from './components/SiteFooter.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import StatsSection from './components/StatsSection.vue'
-import { fallbackStats } from './data/portfolioData'
+import { fallbackStats, getAllImageSrcs } from './data/portfolioData'
 import { getApiUrl } from './lib/api'
 import { initPortfolioPage } from './portfolioPage'
 
@@ -29,10 +29,29 @@ async function loadStats() {
   }
 }
 
+function preloadImagesSequentially() {
+  const srcs = getAllImageSrcs()
+  let index = 0
+
+  function loadNext() {
+    if (index >= srcs.length) return
+    const img = new Image()
+    img.onload = img.onerror = () => {
+      index++
+      setTimeout(loadNext, 100)
+    }
+    img.src = srcs[index]
+  }
+
+  // 等页面关键资源加载完再开始，避免抢带宽
+  setTimeout(loadNext, 1000)
+}
+
 onMounted(async () => {
   await loadStats()
   await nextTick()
   initPortfolioPage()
+  preloadImagesSequentially()
 })
 </script>
 

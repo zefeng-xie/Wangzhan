@@ -394,3 +394,26 @@ export function getMountainGallery(mountain) {
         : '',
   })
 }
+
+// 按页面从上到下的顺序，返回所有图片路径，供后台预加载使用
+export function getAllImageSrcs() {
+  const srcs = []
+
+  const collect = (entries) => entries.forEach((e) => srcs.push(e.src))
+
+  // 健身 → 篮球、爬山、健身照片
+  fitnessTimeline.forEach((item) => item.photos && collect(item.photos))
+  mountainTags.forEach((m) => collect(getMountainGallery(m)))
+  collect(fitnessPhotos)
+
+  // 旅行
+  travelRegions.forEach((region) =>
+    region.cities.forEach((city) => collect(getCityGallery(city.name))),
+  )
+
+  // 创意
+  collect(creativeSection.artPhotos)
+  collect(creativeSection.landscapePhotos)
+
+  return srcs
+}
