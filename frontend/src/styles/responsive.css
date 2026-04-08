@@ -13,6 +13,21 @@
         font-size: 2.2rem;
     }
 
+    .hero-content {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .hero-text {
+        text-align: center;
+    }
+
+    .hero-avatar img {
+        width: 160px;
+        height: 160px;
+    }
+
     .hero-content h1 {
         font-size: 2rem;
     }

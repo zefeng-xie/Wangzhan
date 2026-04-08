@@ -41,14 +41,42 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     background: linear-gradient(135deg, #FDE047 0%, #FEF08A 50%, #FDE047 100%);
     color: var(--text);
+    padding: 0 2rem;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hero-text {
+    text-align: left;
+    flex: 1;
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+}
+
+.hero-avatar {
+    flex-shrink: 0;
+}
+
+.hero-avatar img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    border: 5px solid white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
 
 .highlight {
