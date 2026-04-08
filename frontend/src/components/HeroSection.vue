@@ -12,7 +12,7 @@ import { heroContent } from '../data/portfolioData'
         <a :href="heroContent.ctaHref" class="btn">{{ heroContent.ctaLabel }}</a>
       </div>
       <div class="hero-avatar">
-        <img src="/images/个人照.webp" alt="谢泽锋" />
+        <img src="/images/avatar.webp" alt="谢泽锋" />
       </div>
     </div>
   </section>
