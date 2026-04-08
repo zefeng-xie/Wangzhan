@@ -226,7 +226,6 @@ export const travelRegions = [
       { name: '揭阳', label: '揭阳' },
       { name: '河源', label: '河源' },
       { name: '深圳', label: '深圳' },
-      { name: '东莞', label: '东莞' },
       { name: '惠州', label: '惠州' },
       { name: '广州', label: '广州' },
       { name: '肇庆', label: '肇庆' },
@@ -352,6 +351,7 @@ export function getCityGallery(city) {
   else if (city === '澳门') photoCount = 12
   else if (city === '厦门' || city === '九寨沟') photoCount = 9
   else if (city === '黄龙' || city === '长沙') photoCount = 6
+  else if (city === '中山') photoCount = 1
 
   return createPhotoEntries({
     count: photoCount,
