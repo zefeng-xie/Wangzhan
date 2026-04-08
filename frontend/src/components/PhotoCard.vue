@@ -58,7 +58,7 @@ function handleImageError(event) {
 
 <template>
   <div :class="['photo-item', itemClass]">
-    <img :src="src" :alt="alt" class="photo-img" :style="imageStyle" loading="lazy" @error="handleImageError" />
+    <img :src="src" :alt="alt" class="photo-img" :style="imageStyle" @error="handleImageError" />
     <div class="photo-placeholder" :style="placeholderStyle">
       <i :class="placeholderIcon"></i>
       <p>{{ alt }}</p>
