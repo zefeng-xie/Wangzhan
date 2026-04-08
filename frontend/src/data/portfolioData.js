@@ -310,10 +310,14 @@ export const skills = [
 
 export const projects = [
   {
-    title: '个人网站',
+    title: '个人主页',
     description:
-      '从零学习前端技术，独立设计并开发个人作品集网站。包含响应式布局、CSS 动画、Tab 切换交互、滚动动画效果，并通过 GitHub Pages 部署上线。',
-    tags: ['HTML', 'CSS', 'JavaScript', 'GitHub Pages'],
+      '从零学习前端技术，独立设计并开发个人作品集网站。使用 Vue 3 + Vite 构建前端，Node.js 提供后端 API，Nginx 反向代理，部署于自购云服务器，绑定独立域名并配置 HTTPS。',
+    links: [
+      { label: '访问网站', href: 'https://gyoo.site', icon: 'fa-solid fa-arrow-up-right-from-square' },
+      { label: 'GitHub', href: 'https://github.com/zefeng-xie/Wangzhan', icon: 'fa-brands fa-github' },
+    ],
+    tags: ['Vue 3', 'Node.js', 'Nginx', 'Linux', 'HTTPS'],
   },
   {
     title: '豆瓣电影 Top250 数据挖掘',

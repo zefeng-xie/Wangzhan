@@ -14,8 +14,23 @@ import { projects } from '../data/portfolioData'
             <strong>{{ bullet.label }}</strong>：{{ bullet.text }}
           </li>
         </ul>
-        <div class="project-tags">
-          <span v-for="tag in project.tags" :key="tag">{{ tag }}</span>
+        <div class="project-footer">
+          <div class="project-tags">
+            <span v-for="tag in project.tags" :key="tag">{{ tag }}</span>
+          </div>
+          <div v-if="project.links" class="project-links">
+            <a
+              v-for="link in project.links"
+              :key="link.label"
+              :href="link.href"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              <i :class="link.icon"></i>
+              {{ link.label }}
+            </a>
+          </div>
         </div>
       </div>
     </div>
